@@ -1,0 +1,56 @@
+.banner {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  text-transform: capitalize;
+
+  h1 {
+    font-size: 4rem;
+    color: whitesmoke;
+    text-decoration: underline;
+    text-decoration-color: #c91015;
+    text-shadow: #c91015 1.25px 1.25px 2.5px;
+  }
+
+  div {
+    width: 10rem;
+    height: 5px;
+    margin: 1.7rem auto;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: whitesmoke;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .banner div {
+    height: 0.001px;
+  }
+
+  .banner h1 {
+    font-size: 1.75rem;
+  }
+}
+
+//@media screen and (min-width: 700px) {
+//  .banner {
+//    padding: 1rem 2rem;
+//  }
+//  h1 {
+//    font-size: 3rem;
+//  }
+//}
+//
+//@media screen and (min-width: 992px) {
+//  .banner {
+//    padding: 2rem 6rem;
+//  }
+//  h1 {
+//    font-size: 4rem;
+//  }
+//}

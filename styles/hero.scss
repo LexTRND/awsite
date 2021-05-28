@@ -1,0 +1,37 @@
+.defaultHero,
+.gallery-hero,
+.appointments-hero {
+  min-height: calc(100vh - 66px);
+  background: url("../public/hhouse.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 50%;
+}
+
+.defaultHero img {
+  width: 70%;
+}
+
+//@media screen and (max-width: 768px) {
+//  .defaultHero {
+//    background-size: contain;
+//  }
+//}
+//
+//@media screen and (max-width: 900px) {
+//  .defaultHero {
+//    background-size: contain;
+//  }
+//}
+
+.gallery-hero {
+  background: url("../public/gallery1.jpeg") center/cover no-repeat;
+  min-height: 50vh;
+  width: 100%;
+}
+
+.appointments-hero {
+  background: url("../public/appointments.jpeg") center/cover no-repeat;
+  /*min-height: 25vh;*/
+}

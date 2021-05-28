@@ -1,0 +1,121 @@
+////NavigationBar Component
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  width: 100%;
+}
+
+.logo img {
+  display: block;
+  width: 6rem;
+  margin-right: 5rem;
+}
+
+.menu img {
+  width: 1.3rem;
+  position: relative;
+  padding-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+
+  justify-content: space-around;
+}
+
+.nav-links li {
+  font-size: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #c91015;
+}
+
+.nav-links a:hover {
+  text-shadow: 33px 14px 9px rgba(201, 16, 22, 0.6);
+  -webkit-text-shadow: 33px 14px 9px rgba(201, 16, 22, 0.6);
+  -moz-text-shadow: 33px 14px 9px rgba(201, 16, 22, 0.6);
+  text-shadow: 33px 14px 9px rgba(201, 16, 22, 0.6);
+  -webkit-text-shadow: 33px 14px 9px rgba(201, 16, 22, 0.6);
+  -moz-text-shadow: 33px 14px 9px rgba(201, 16, 22, 0.6);
+}
+
+.menu {
+  display: none;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-grow: 2;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav {
+    background: #c91015;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    width: 100%;
+  }
+
+  .nav-active {
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    top: 0.01vh;
+    background: #c91015;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 9999;
+
+    //.menu {
+    //  display: none;
+    //}
+  }
+
+  .nav-active a {
+    font-size: 0.8rem;
+    color: #f7f7f7;
+    text-decoration: none;
+  }
+
+  .nav-active li {
+    text-align: center;
+    list-style: none;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+.MuiButton-outlinedPrimary {
+  color: #c91015;
+}

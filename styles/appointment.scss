@@ -1,0 +1,94 @@
+.appointmentForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+}
+
+.personInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.appointmentInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.or {
+  text-align: center;
+  padding-top: 4.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.makeAppointmentSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchAppointmentSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+
+.searchAppointmentDiv {
+  align-content: start;
+  padding-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .appointmentPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    //align-items: center;
+    align-items: flex-start;
+  }
+
+  .makeAppointment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
+  }
+
+  .appointmentForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .searchForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .personInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .appointmentInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-title h4 {
+    font-size: 4rem;
+  }
+}

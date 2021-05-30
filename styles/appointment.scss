@@ -12,11 +12,16 @@
 .appointmentInfo {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
+}
+.appointmentInfo SubmitButton {
+  align-self: baseline;
 }
 
 .searchForm {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .or {

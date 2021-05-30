@@ -11,7 +11,6 @@ const appointmentButtonStyled = makeStyles({
   root: {
     border: "#c91015",
     borderRadius: 3,
-    // boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     color: "white",
     height: 48,
   },
@@ -29,8 +28,7 @@ function AppointmentButton() {
 const galleryButtonStyled = makeStyles({
   root: {
     background: "#c91015",
-    borderRadius: 3,
-    // boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    borderRadius: 50,
     color: "white",
     height: 48,
   },
@@ -45,7 +43,7 @@ export function GalleryButton() {
   );
 }
 
-export default function Home({ appointments }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -66,7 +64,7 @@ export default function Home({ appointments }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:1337/appointments");
+  const res = await fetch(`${process.env.DB_HOST}/appointments`);
   const appointments = await res.json();
 
   return {

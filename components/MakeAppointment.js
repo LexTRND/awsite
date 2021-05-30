@@ -1,7 +1,31 @@
 import React, { useState } from "react";
-import { TextField, Select, MenuItem, InputLabel } from "@material-ui/core";
+
+import {
+  TextField,
+  Select,
+  MenuItem,
+  InputLabel,
+  Button,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { useForm, Controller } from "react-hook-form";
-import Confirmation from "./Confirmation";
+const submitButtonStyled = makeStyles({
+  root: {
+    background: "#c91015",
+    borderRadius: 50,
+    // boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    color: "white",
+    height: 48,
+  },
+});
+export function SubmitButton() {
+  const classes = submitButtonStyled();
+  return (
+    <Button type="submit" className={classes.root}>
+      Submit
+    </Button>
+  );
+}
 
 const MakeAppointment = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -13,7 +37,7 @@ const MakeAppointment = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:1337/appointments", {
+    fetch(`${process.env.API_URL}/appointments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,13 +55,7 @@ const MakeAppointment = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        alert(
-          `${data.appointmentType} for ${
-            data.firstName
-          } has been scheduled for ${data.appointmentDate} at ${getHour(
-            data.appointmentTime
-          )}`
-        );
+        console.log(data);
       });
   };
   return (
@@ -106,7 +124,7 @@ const MakeAppointment = () => {
               <option value={"Consultation"}>Consultation</option>
               <option value={"Service"}>Service</option>
             </Select>
-            <input type="submit" />
+            <SubmitButton type="submit" />
           </div>
         </form>
       </div>

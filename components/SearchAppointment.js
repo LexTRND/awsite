@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { TextField, Select, MenuItem, InputLabel } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
-import Confirmation from "./Confirmation";
+import { SubmitButton } from "./MakeAppointment";
+const URL = process.env.NEXT_APP_API_URL;
 
 const SearchAppointment = () => {
   const {
@@ -12,12 +13,14 @@ const SearchAppointment = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:1337/appointments/" + data.id, {
+    fetch(`${URL}/appointments/` + data.id, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
-        Confirmation({ data });
+        alert(
+          `${data.appointmentType} for ${data.firstName} is scheduled for ${data.appointmentDate} at ${data.appointmentTime}`
+        );
       });
   };
 
@@ -29,7 +32,7 @@ const SearchAppointment = () => {
         <form className="searchForm" onSubmit={handleSubmit(onSubmit)}>
           {/*<TextField className="textfield" label="Email" {...register("email")} />*/}
           <TextField className="textfield" label="ID" {...register("id")} />
-          <input type="submit" />
+          <SubmitButton type="submit" />
         </form>
       </div>
     </>

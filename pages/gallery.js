@@ -7,8 +7,8 @@ const Gallery = ({ galleries }) => {
   console.log(galleries);
   const gallery = galleries.map((gallery) => {
     return {
-      original: process.env.DB_HOST + gallery.thumbnail.url,
-      thumbnail: process.env.DB_HOST + gallery.thumbnail.url,
+      original: process.env.DB_HOST + gallery.original.url,
+      thumbnail: process.env.DB_HOST + gallery.original.url,
     };
   });
 

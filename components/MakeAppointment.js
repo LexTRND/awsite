@@ -1,19 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-import {
-  TextField,
-  Select,
-  MenuItem,
-  InputLabel,
-  Button,
-} from "@material-ui/core";
+import { TextField, Select, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useForm, Controller } from "react-hook-form";
 const submitButtonStyled = makeStyles({
   root: {
     background: "#c91015",
     borderRadius: 50,
-    // boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     color: "white",
     height: 48,
   },
@@ -28,7 +21,6 @@ export function SubmitButton() {
 }
 
 const MakeAppointment = () => {
-  const [submitting, setSubmitting] = useState(false);
   const {
     register,
     handleSubmit,

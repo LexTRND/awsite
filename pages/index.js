@@ -64,7 +64,7 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.DB_HOST}/appointments`);
+  const res = await fetch(`${process.env.DB_HOST}/galleries`);
   const appointments = await res.json();
 
   return {

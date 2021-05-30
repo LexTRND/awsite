@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { TextField, Select, MenuItem, InputLabel } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
 import { SubmitButton } from "./MakeAppointment";
-const URL = process.env.NEXT_APP_API_URL;
 
 const SearchAppointment = () => {
   const {
@@ -13,7 +12,7 @@ const SearchAppointment = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`${URL}/appointments/` + data.id, {
+    fetch(`${process.env.API_URL}/appointments/` + data.id, {
       method: "GET",
     })
       .then((response) => response.json())

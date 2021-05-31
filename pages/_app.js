@@ -7,6 +7,7 @@ import "../styles/banner.scss";
 import "../styles/hero.scss";
 import "../styles/footer.scss";
 import "../styles/appointment.scss";
+import "../styles/norm.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

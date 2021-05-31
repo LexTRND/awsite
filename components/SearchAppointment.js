@@ -7,7 +7,8 @@ const SearchAppointment = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`${process.env.API_URL}/appointments/` + data.id, {
+    console.log(process.env.NEXT_PUBLIC_DB_HOST);
+    fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/appointments/` + data.id, {
       method: "GET",
     })
       .then((response) => response.json())

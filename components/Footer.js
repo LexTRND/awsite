@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import { BsPhone } from "react-icons/bs";
-import styled from "styled-components";
 
 const Footer = () => {
   return (

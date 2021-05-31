@@ -1,5 +1,4 @@
 import React from "react";
-
 import { TextField, Select, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useForm, Controller } from "react-hook-form";
@@ -21,6 +20,7 @@ export function SubmitButton() {
 }
 
 const MakeAppointment = () => {
+  console.log(process.env.DB_HOST);
   const {
     register,
     handleSubmit,
@@ -29,7 +29,7 @@ const MakeAppointment = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch(`${process.env.API_URL}/appointments`, {
+    fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/appointments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,9 @@ const MakeAppointment = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        alert(
+          `${data.appointmentType} for ${data.firstName} has been scheduled for ${data.appointmentDate} at ${data.appointmentTime}`
+        );
       });
   };
   return (

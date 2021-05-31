@@ -7,8 +7,8 @@ const Gallery = ({ galleries }) => {
   console.log(galleries);
   const gallery = galleries.map((gallery) => {
     return {
-      original: process.env.DB_HOST + gallery.original.url,
-      thumbnail: process.env.DB_HOST + gallery.original.url,
+      original: process.env.NEXT_PUBLIC_DB_HOST + gallery.thumbnail.url,
+      thumbnail: process.env.NEXT_PUBLIC_DB_HOST + gallery.thumbnail.url,
     };
   });
 
@@ -24,7 +24,7 @@ const Gallery = ({ galleries }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.DB_HOST}/galleries`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/galleries`);
   const galleries = await res.json();
 
   return {

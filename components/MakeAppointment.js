@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField, Select } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
-import { SubmitButton } from "./Style";
+import { SubmitButton } from "./MaterialStyle";
 
 const MakeAppointment = () => {
   const {

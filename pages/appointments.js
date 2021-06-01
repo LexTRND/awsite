@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import MakeAppointment from "../components/MakeAppointment";
 import SearchAppointment from "../components/SearchAppointment";
-import { GalleryButton } from "../components/style.js";
+import { GalleryButton } from "../components/MaterialStyle.js";
 import Head from "next/head";
 
 const appointments = () => {

@@ -3,8 +3,8 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import Services from "../components/Services";
 import Testimonial from "../components/Testimonial";
-import { GalleryButton } from "../components/Style";
-import { AppointmentButton } from "../components/Style";
+import { GalleryButton } from "../components/MaterialStyle";
+import { AppointmentButton } from "../components/MaterialStyle";
 import Head from "next/head";
 
 export default function Home() {

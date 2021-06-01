@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
-import { SubmitButton } from "./Style";
+import { SubmitButton } from "./MaterialStyle";
 
 const SearchAppointment = () => {
   const { register, handleSubmit } = useForm();

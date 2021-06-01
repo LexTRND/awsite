@@ -9,7 +9,7 @@ import "../styles/hero.scss";
 import "../styles/footer.scss";
 import "../styles/appointment.scss";
 import "../styles/norm.scss";
-import { theme } from "../components/Style";
+import { theme } from "../components/MaterialStyle";
 
 function MyApp({ Component, pageProps }) {
   return (

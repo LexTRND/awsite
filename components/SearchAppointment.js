@@ -13,9 +13,7 @@ const SearchAppointment = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        alert(
-          `${data.appointmentType} for ${data.firstName} is scheduled for ${data.appointmentDate} at ${data.appointmentTime}`
-        );
+        console.log(data);
       });
   };
 

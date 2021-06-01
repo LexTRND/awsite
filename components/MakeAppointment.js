@@ -1,26 +1,9 @@
 import React from "react";
-import { TextField, Select, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { TextField, Select } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
-const submitButtonStyled = makeStyles({
-  root: {
-    background: "#c91015",
-    borderRadius: 50,
-    color: "white",
-    height: 48,
-  },
-});
-export function SubmitButton() {
-  const classes = submitButtonStyled();
-  return (
-    <Button type="submit" className={classes.root}>
-      Submit
-    </Button>
-  );
-}
+import { SubmitButton } from "./Style";
 
 const MakeAppointment = () => {
-  console.log(process.env.DB_HOST);
   const {
     register,
     handleSubmit,

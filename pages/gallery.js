@@ -6,7 +6,6 @@ import Head from "next/head";
 const Gallery = ({ galleries }) => {
   console.log(galleries);
   const gallery = galleries.map((gallery) => {
-    //production doesnt' use the /gallery/ url
     return {
       original: process.env.NEXT_PUBLIC_DB_HOST + gallery.thumbnail.url,
       thumbnail: process.env.NEXT_PUBLIC_DB_HOST + gallery.thumbnail.url,

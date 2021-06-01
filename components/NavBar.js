@@ -14,7 +14,7 @@ const NavBar = () => {
     <nav>
       <div className="logo">
         <Link href="/">
-          <a>
+          <a onClick={navClick}>
             <img src="/awlogo.svg" alt="AW Painting" />
           </a>
         </Link>

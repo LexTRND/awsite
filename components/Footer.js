@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="mainFooter">
           <img src="/awlogo.svg" alt="logo" />
           <div className="footerTop">
-            <a href="tel:+6122270783">
+            <a href="tel:+6128406300">
               {" "}
-              <BsPhone /> 612-227-0783
+              <BsPhone /> 612-555-5555
             </a>
             <a href="mailto:a.reese@me.com">
               {" "}

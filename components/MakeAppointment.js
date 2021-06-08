@@ -1,7 +1,8 @@
 import React from "react";
-import { TextField, Select } from "@material-ui/core";
+import { TextField, Select, MenuItem } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
 import { SubmitButton } from "./MaterialStyle";
+import swal from "sweetalert";
 
 const MakeAppointment = () => {
   const {
@@ -30,8 +31,9 @@ const MakeAppointment = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        alert(
-          `${data.appointmentType} for ${data.firstName} has been scheduled for ${data.appointmentDate} at ${data.appointmentTime}`
+        swal(
+          `${data.appointmentType} for ${data.firstName} has been scheduled for ${data.appointmentDate} at ${data.appointmentTime}`,
+          "success"
         );
       });
   };
@@ -93,14 +95,24 @@ const MakeAppointment = () => {
                 />
               )}
             />
+            <Controller
+              control={control}
+              name="appointmentType"
+              label="Type"
+              render={({ field: { onChange, onBlur, value, ref } }) => (
+                <Select
+                  id="appointmentType"
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  selected={value}
+                  {...register("appointmentType", { required: true })}
+                >
+                  <MenuItem value={"Consultation"}>Consultation</MenuItem>
+                  <MenuItem value={"Service"}>Service</MenuItem>
+                </Select>
+              )}
+            />
 
-            <Select
-              id="appointmentType"
-              {...register("appointmentType", { required: true })}
-            >
-              <option value={"Consultation"}>Consultation</option>
-              <option value={"Service"}>Service</option>
-            </Select>
             <SubmitButton type="submit" />
           </div>
         </form>

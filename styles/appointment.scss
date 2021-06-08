@@ -45,6 +45,10 @@
   gap: 2rem;
 }
 
+.empty {
+  display: block;
+}
+
 .searchAppointmentDiv {
   align-content: start;
   padding-bottom: 1.5rem;
@@ -96,4 +100,25 @@
   .section-title h4 {
     font-size: 4rem;
   }
+}
+
+//alert styling
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #c91015;
+  font-size: 12px;
+  color: white;
+  border: none;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-button:hover {
+  color: #c91015;
+  background-color: white;
+}
+
+.swal-overlay {
+  background-color: rgba(193, 66, 66, 0.88);
 }

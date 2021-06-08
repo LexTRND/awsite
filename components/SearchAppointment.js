@@ -6,6 +6,11 @@ import swal from "sweetalert";
 
 const SearchAppointment = () => {
   const { register, handleSubmit } = useForm();
+  const formatTime = (x, y) => {
+    const ca = x + "T" + y;
+    const cb = new Date(ca);
+    return cb.toLocaleString([], { hour: "2-digit", minute: "2-digit" });
+  };
 
   const onSubmit = (data) => {
     fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/appointments/` + data.id, {
@@ -16,9 +21,12 @@ const SearchAppointment = () => {
       } else {
         response.json().then((data) => {
           swal(
-            `${data.appointmentType} for ${data.firstName} is scheduled for ${data.appointmentDate} at ${data.appointmentTime}`,
+            `${data.appointmentType} for ${data.firstName} is scheduled for ${
+              data.appointmentDate
+            } at ${formatTime(data.appointmentDate, data.appointmentTime)} `,
             "To make changes or cancel call 555-555-5555"
           );
+          console.log(formatTime(data.appointmentDate, data.appointmentTime));
         });
       }
     });

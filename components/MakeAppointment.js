@@ -5,6 +5,12 @@ import { SubmitButton } from "./MaterialStyle";
 import swal from "sweetalert";
 
 const MakeAppointment = () => {
+  const formatTime = (x, y) => {
+    const ca = x + "T" + y;
+    const cb = new Date(ca);
+    console.log(cb.toLocaleString([], { hour: "2-digit", minute: "2-digit" }));
+    return cb.toLocaleString([], { hour: "2-digit", minute: "2-digit" });
+  };
   const {
     register,
     handleSubmit,
@@ -32,7 +38,12 @@ const MakeAppointment = () => {
       .then((response) => response.json())
       .then((data) => {
         swal(
-          `${data.appointmentType} for ${data.firstName} has been scheduled for ${data.appointmentDate} at ${data.appointmentTime}`,
+          `${data.appointmentType} for ${
+            data.firstName
+          } has been scheduled for ${data.appointmentDate} at ${formatTime(
+            data.appointmentDate,
+            data.appointmentTime
+          )}`,
           "success"
         );
       });

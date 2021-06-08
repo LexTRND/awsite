@@ -23,7 +23,9 @@ const SearchAppointment = () => {
           swal(
             `${data.appointmentType} for ${data.firstName} is scheduled for ${
               data.appointmentDate
-            } at ${formatTime(data.appointmentDate, data.appointmentTime)} `,
+            } at ${formatTime(data.appointmentDate, data.appointmentTime)} a ${
+              data.id
+            } `,
             "To make changes or cancel call 555-555-5555"
           );
           console.log(formatTime(data.appointmentDate, data.appointmentTime));
